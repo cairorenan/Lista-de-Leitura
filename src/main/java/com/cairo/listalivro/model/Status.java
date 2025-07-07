@@ -1,7 +1,7 @@
 package com.cairo.listalivro.model;
 
 public enum Status {
-    COMPLETO,
+    CONCLUIDO,
     PENDENTE,
     PLANEJADO
 }

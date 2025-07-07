@@ -17,6 +17,8 @@ import com.cairo.listalivro.dto.LivroRequestDTO;
 import com.cairo.listalivro.dto.LivroResponseDTO;
 import com.cairo.listalivro.service.ListaService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/")
 public class ListaController {
@@ -44,7 +46,7 @@ public class ListaController {
     }
 
     @PutMapping("/editar/{id}")
-    public ResponseEntity<Void> EditarLivro(@PathVariable Long id, @RequestBody LivroRequestDTO data){
+    public ResponseEntity<Void> EditarLivro(@PathVariable Long id, @Valid @RequestBody LivroRequestDTO data){
         return listaService.EditarLivro(id, data.nome(), data.autor(), data.imagem(), data.status());
     }
 }
